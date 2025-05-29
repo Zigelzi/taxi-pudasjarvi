@@ -10,6 +10,16 @@ templ Base(title string) {
 			<link rel="stylesheet" href="/static/styles.css"/>
 			<title>{ title }</title>
 		</head>
+		<header>
+			<nav>
+				<ul>
+					<li><a href="/">Etusivu</a></li>
+					<li><a href="/hinnasto">Hinnasto</a></li>
+					<li><a href="/palvelut">Palvelut</a></li>
+					<li><a href="/yhteystiedot">Yhteystiedot</a></li>
+				</ul>
+			</nav>
+		</header>
 		<body class="test">
 			{ children... }
 		</body>
