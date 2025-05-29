@@ -4,13 +4,15 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/a-h/templ"
+	"github.com/Zigelzi/taxi-pudasjarvi/handlers"
 )
 
 func main() {
 	const port = ":3000"
-	component := index("Testing")
-	http.Handle("/", templ.Handler(component))
+	// Static files
+	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
+	// Routes
+	http.HandleFunc("/", handlers.Index)
 	fmt.Println("Starting server on port: ", port)
 	http.ListenAndServe(port, nil)
 }
