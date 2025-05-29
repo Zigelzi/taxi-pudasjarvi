@@ -1,14 +1,16 @@
 package main
 
 import (
+	"errors"
 	"fmt"
+	"log"
 	"net/http"
+	"os"
 
 	"github.com/Zigelzi/taxi-pudasjarvi/handlers"
 )
 
 func main() {
-	const port = ":3000"
 	// Static files
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 
@@ -17,6 +19,14 @@ func main() {
 	http.HandleFunc("GET /palvelut", handlers.Services)
 	http.HandleFunc("GET /hinnasto", handlers.Prices)
 	http.HandleFunc("GET /yhteystiedot", handlers.Contact)
-	fmt.Println("Starting server on port: ", port)
-	http.ListenAndServe(port, nil)
+
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+	fmt.Println("Starting server on port:", port)
+	err := http.ListenAndServe(":"+port, nil)
+	if err != nil && !errors.Is(err, http.ErrServerClosed) {
+		log.Fatal("Error starting server: ", err)
+	}
 }
