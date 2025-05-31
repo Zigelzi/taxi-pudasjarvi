@@ -7,20 +7,20 @@ templ Base(title string) {
 			<meta charset="UTF-8"/>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 			<meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-			<link rel="stylesheet" href="/static/styles.css"/>
+			<link rel="stylesheet" href="/assets/styles.css"/>
+			<link rel="stylesheet" href="/assets/reset.css"/>
+			<link rel="stylesheet" href="/assets/tailwind.css"/>
 			<title>{ title }</title>
 		</head>
 		<header>
-			<nav>
-				<ul>
-					<li><a href="/">Etusivu</a></li>
-					<li><a href="/hinnasto">Hinnasto</a></li>
-					<li><a href="/palvelut">Palvelut</a></li>
-					<li><a href="/yhteystiedot">Yhteystiedot</a></li>
-				</ul>
+			@Nav()
+			<nav class="nav">
+				<p>
+					Test
+				</p>
 			</nav>
 		</header>
-		<body class="test">
+		<body class="bg-secondary-500">
 			{ children... }
 		</body>
 	</html>

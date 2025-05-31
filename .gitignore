@@ -36,3 +36,7 @@ go.work.sum
 
 tmp/
 src/
+
+node_modules/
+.vscode
+*_templ.go

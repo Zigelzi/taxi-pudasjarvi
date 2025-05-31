@@ -1,0 +1,16 @@
+:root {
+    --primary-500: #fff;
+    --secondary-500: #aaa;
+}
+
+.bg-primary-500 {
+    background-color: var(--primary-500);
+}
+
+.bg-secondary-500 {
+    background-color: var(--secondary-500);
+}
+
+.big-text {
+    font-size: 3rem;
+}

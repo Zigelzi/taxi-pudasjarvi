@@ -12,7 +12,7 @@ import (
 
 func main() {
 	// Static files
-	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
+	http.Handle("/assets/", http.StripPrefix("/assets", http.FileServer(http.Dir("assets"))))
 
 	// Routes
 	http.HandleFunc("GET /{$}", handlers.Index)
