@@ -7,7 +7,7 @@ import (
 )
 
 func Index(w http.ResponseWriter, r *http.Request) {
-	component := components.Index("Testing handlers")
+	component := components.Index()
 	component.Render(r.Context(), w)
 }
 

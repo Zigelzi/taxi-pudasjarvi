@@ -1,16 +1,15 @@
 package components
 
-css nav() {
-	margin: 0;
-}
-
 templ Nav() {
-	<nav class={ nav() }>
-		<ul>
-			<li><a href="/">Etusivu</a></li>
-			<li><a href="/hinnasto">Hinnasto</a></li>
-			<li><a href="/palvelut">Palvelut</a></li>
-			<li><a href="/yhteystiedot">Yhteystiedot</a></li>
-		</ul>
+	<nav>
+		<div class="bg-slate-100">
+			<div class="pt-4"><p class="text-center text-2xl">Pudasjärven Taksimatkat</p></div>
+			<ul class="flex gap-4 justify-center py-4 ">
+				<li><a class="text-slate-800" href="/">Etusivu</a></li>
+				<li><a class="text-slate-800" href="/hinnasto">Hinnasto</a></li>
+				<li><a class="text-slate-800" href="/palvelut">Palvelut</a></li>
+				<li><a class="text-slate-800" href="/yhteystiedot">Yhteystiedot</a></li>
+			</ul>
+		</div>
 	</nav>
 }

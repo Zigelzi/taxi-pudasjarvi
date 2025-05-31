@@ -1,9 +1,10 @@
 package components
 
-templ Index(content string) {
-	@Base("Palvelut - Pudasjärven Taksimatkat") {
-		<h1 class="">Pudasjärven Taksimatkat</h1>
-		<p>{ content }</p>
-		<p>Tetsing </p>
+templ Index() {
+	@Base("Pudasjärven Taksimatkat") {
+		<div class="min-h-[80vh] flex flex-col justify-center">
+			<h1 class="text-2xl mb-8">Laadukasta taksipalvelua Pudasjärven alueella</h1>
+			<h2 class="">Pudasjärven Taksimatkat Oy</h2>
+		</div>
 	}
 }
