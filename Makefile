@@ -12,7 +12,7 @@ build/server:
 
 build/static:
 	go mod tidy && \
-	templ generate &&\
+	go run github.com/a-h/templ/cmd/templ@latest generate &&\
 	go generate &&\
 	npx --yes @tailwindcss/cli -i ./tailwind.css -o ./assets/tailwind.css &&\
 	go build -ldflags="-w -s" -o ${BINARY_NAME} &&\
