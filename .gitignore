@@ -24,8 +24,6 @@ go.work.sum
 # env file
 .env
 
-# Excel files used as input
-*.xlsx
 
 # Windows zone identifiers
 *Zone.Identifier
@@ -34,11 +32,18 @@ go.work.sum
 # SQLite databases
 *.db
 
+# Temporary directories
 tmp/
 src/
 
+# Third party folders
 node_modules/
 .vscode
-*_templ.go
+
+# Generated code and assets
 public/
+assets/tailwind.css
+*_templ.go
+
+# Build binary
 taxi-pudasjarvi
