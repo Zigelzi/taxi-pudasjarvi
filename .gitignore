@@ -40,3 +40,5 @@ src/
 node_modules/
 .vscode
 *_templ.go
+public/
+taxi_pudasjarvi

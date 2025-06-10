@@ -1,47 +1,29 @@
 package main
 
 import (
-	"errors"
-	"fmt"
-	"log"
-	"net/http"
 	"os"
 
-	"github.com/Zigelzi/taxi-pudasjarvi/handlers"
+	filegeneration "github.com/Zigelzi/taxi-pudasjarvi/file_generation"
+	"github.com/Zigelzi/taxi-pudasjarvi/server"
+	"github.com/Zigelzi/taxi-pudasjarvi/views"
 )
 
 func main() {
-	// Static files
-	http.Handle("/assets/",
-		disableCacheInDevMode(
-			http.StripPrefix("/assets",
-				http.FileServer(http.Dir("assets")))))
+	var arg string
+	if len(os.Args) > 1 {
+		arg = os.Args[1]
+	}
 
-	// Routes
-	http.HandleFunc("GET /{$}", handlers.Index)
-	http.HandleFunc("GET /palvelut", handlers.Services)
-	http.HandleFunc("GET /hinnasto", handlers.Prices)
-	http.HandleFunc("GET /yhteystiedot", handlers.Contact)
+	if arg == "static" {
+		appViews := views.Get()
+		for route, component := range appViews {
+			filegeneration.CreateStaticFiles(route, component)
 
+		}
+		return
+	}
 	port := os.Getenv("PORT")
-	if port == "" {
-		port = "8080"
-	}
-	fmt.Println("Starting server on port:", port)
-	err := http.ListenAndServe(":"+port, nil)
-	if err != nil && !errors.Is(err, http.ErrServerClosed) {
-		log.Fatal("Error starting server: ", err)
-	}
-}
 
-var dev = true
-
-func disableCacheInDevMode(next http.Handler) http.Handler {
-	if !dev {
-		return next
-	}
-	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Set("Cache-Control", "no-store")
-		next.ServeHTTP(w, r)
-	})
+	serv := server.Server{Port: port}
+	serv.Start(true)
 }

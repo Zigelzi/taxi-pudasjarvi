@@ -1,14 +1,22 @@
 # Makefile
 .PHONY: build
 
-BINARY_NAME=app
+BINARY_NAME=taxi-pudasjarvi
 
-# Build the app
-build:
+# Build the app in webserver mode
+build/server:
 	go mod tidy && \
 	templ generate &&\
 	go generate &&
-	go build -ldflags="-w -s" -o ${BINARY_NAME}
+	go build -ldflags="-w -s" -o ${BINARY_NAME} &&
+
+build/static:
+	go mod tidy && \
+	go run github.com/a-h/templ/cmd/templ@latest generate &&\
+	go generate &&\
+	npx --yes @tailwindcss/cli -i ./tailwind.css -o ./assets/tailwind.css &&\
+	go build -ldflags="-w -s" -o ${BINARY_NAME} &&\
+	./${BINARY_NAME} static
 
 # run templ generation in watch mode to detect all .templ files and 
 # re-create _templ.txt files on change, then send reload event to browser. 
