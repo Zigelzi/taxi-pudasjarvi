@@ -14,10 +14,11 @@ templ Base(title string) {
 		<header>
 			@Nav()
 		</header>
-		<body class="bg-secondary-500">
-			<div class="mx-4">
-				{ children... }
-			</div>
+		<body>
+			{ children... }
 		</body>
+		<footer>
+			@Footer()
+		</footer>
 	</html>
 }

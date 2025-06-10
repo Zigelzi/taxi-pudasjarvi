@@ -41,7 +41,7 @@ func Index() templ.Component {
 				}()
 			}
 			ctx = templ.InitializeContext(ctx)
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<div class=\"min-h-[80vh] flex flex-col justify-center\"><h1 class=\"text-2xl mb-8\">Laadukasta taksipalvelua Pudasjärven alueella</h1><h2 class=\"\">Pudasjärven Taksimatkat Oy</h2></div>")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<div class=\"min-h-[40vh] flex flex-col justify-center px-4\"><h2 class=\"text-2xl mb-8\">Laadukasta taksipalvelua Pudasjärven alueella</h2></div><section class=\"bg-slate-200 section\"><h2 class=\"text-2xl mb-2\">Tilaa taksi</h2><div><h3 class=\"\">Pudasjärven keskusta</h3><a href=\"tel:0400289760\" target=\"_blank\" rel=\"noopener noreferrer\">0400 289 760</a></div><div><h3 class=\"\">Jaurakkajärvi, Puhos, Ervasti</h3><a href=\"tel:0400386188\" target=\"_blank\" rel=\"noopener noreferrer\">0400 386 188</a></div><a href=\"/hinnasto\" target=\"_blank\" rel=\"noopener noreferrer\">tai tutustu hinnastoomme</a></section><section class=\"section\"><h2 class=\"text-2xl\">Pudasjärven Taksimatkat Oy</h2><p>Tarjoamme sinulle laadukkaita taksimatkoja Pudasjärven alueella jo yli 25 vuoden kokemuksella.</p><p>Sinua palvelee ammattitaitoinen henkilökuntamme kaikissa kuljetustehtävissä.</p><p>Olemme Suomen Taksiliiton jäseniä.</p></section><section class=\"section bg-slate-200\"><h2 class=\"text-2xl\">Palvelumme</h2><ol><li>Taksi</li><li>Kela-taksi Pudasjärvi</li><li>Tilausajot</li><li>Perusturva-ajot Pudasjärvi</li><li>Sopimuskuljetukset</li></ol><a href=\"/palvelut\">Lue lisää palveluistamme</a></section>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}

@@ -1,8 +1,11 @@
 @import "tailwindcss";
 
-.test {
-    font-weight: 900;
-    padding: 10px;
-    background-color: blue;
+@layer components {
+    .btn {
+        @apply inline-flex items-center bg-yellow-300
+    }
 
+    .section {
+        @apply px-4 mb-8 py-6
+    }
 }
