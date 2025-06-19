@@ -7,10 +7,7 @@ import (
 
 func Get() map[string]templ.Component {
 	views := map[string]templ.Component{
-		"/":             components.Index(),
-		"/palvelut":     components.Services(),
-		"/hinnasto":     components.Prices(),
-		"/yhteystiedot": components.Contact(),
+		"/": components.Index(),
 	}
 	return views
 }

@@ -22,9 +22,6 @@ func (s Server) Start(isDev bool) {
 
 	// Routes
 	http.HandleFunc("GET /{$}", handlers.Index)
-	http.HandleFunc("GET /palvelut", handlers.Services)
-	http.HandleFunc("GET /hinnasto", handlers.Prices)
-	http.HandleFunc("GET /yhteystiedot", handlers.Contact)
 
 	if s.Port == "" {
 		s.Port = "8080"
