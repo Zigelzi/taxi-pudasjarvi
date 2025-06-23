@@ -2,17 +2,18 @@ package components
 
 templ Index() {
 	@Base("Pudasjärven Taksimatkat") {
-		<div class="min-h-[80vh] flex flex-col justify-center ">
-		<div class="bg-cover">
-		<img class="min-h-64" src="./assets/taxi-pudasjarvi-hero.jpg" alt="" srcset="">
+		<div class="h-[80vh] flex flex-col justify-center ">
+			<div class="flex-1 relative overflow-hidden flex items-center justify-center">
+				<img class="w-full h-full object-center object-cover" src="./assets/taxi-pudasjarvi-hero.jpg" alt="" srcset=""/>
+			</div>
+			<div class="flex-1 flex items-center justify-center flex-col px-4">
+				<h2 class="text-2xl mb-4">Laadukasta taksipalvelua Pudasjärven alueella</h2>
+				<p>Viemme sinut perille siistillä ja laadukkaalla autolla ja ystävällisessä seurassa. Yli 40 vuoden kokemuksella.</p>
+			</div>
 		</div>
-		<div>
-			<h2 class="text-2xl mb-8">Laadukasta taksipalvelua Pudasjärven alueella</h2>
-		</div>
-		</div>
-		<section class="bg-slate-200 section">
-			<h2 class="text-2xl mb-2">Tilaa taksi</h2>
-			<div>
+		<section class="bg-stone-900 text-white section">
+			<h2 class="text-2xl mb-2 text-taxi">Tilaa taksi</h2>
+			<div class="mb-4">
 				<h3 class="">Pudasjärven keskusta</h3>
 				<a href="tel:0400289760" target="_blank" rel="noopener noreferrer">0400 289 760</a>
 			</div>
@@ -21,6 +22,5 @@ templ Index() {
 				<a href="tel:0400386188" target="_blank" rel="noopener noreferrer">0400 386 188</a>
 			</div>
 		</section>
-
 	}
 }
