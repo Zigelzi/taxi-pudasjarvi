@@ -18,12 +18,12 @@ func CreateStaticFiles(routePath string, component templ.Component) {
 	}
 	filePath := getFileName(rootPath, routePath)
 
-	f, err := os.Create(filePath)
+	htmlFile, err := os.Create(filePath)
 	if err != nil && !os.IsExist(err) {
 		log.Fatalf("failed to create file %v", err)
 	}
 
-	err = component.Render(context.Background(), f)
+	err = component.Render(context.Background(), htmlFile)
 	if err != nil {
 		log.Fatalf("failed to render component: %v", err)
 	}
@@ -34,8 +34,13 @@ func CreateStaticFiles(routePath string, component templ.Component) {
 		log.Fatalf("failed to create assets output directory %v", err)
 	}
 
-	tailwindPath := filepath.Join(assetsPath, "tailwind.css")
-	err = Copy("./assets/tailwind.css", tailwindPath)
+	heroImagePath := filepath.Join(assetsPath, "tailwind.css")
+	err = copy("./assets/tailwind.css", heroImagePath)
+	if err != nil {
+		log.Fatalf("failed to copy asset files: %v", err)
+	}
+	heroImagePath = filepath.Join(assetsPath, "taxi-pudasjarvi-hero.jpg")
+	err = copy("./assets/taxi-pudasjarvi-hero.jpg", heroImagePath)
 	if err != nil {
 		log.Fatalf("failed to copy asset files: %v", err)
 	}

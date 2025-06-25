@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-func Copy(srcPath, destPath string) error {
+func copy(srcPath, destPath string) error {
 	srcFile, err := os.Open(srcPath)
 	if err != nil {
 		return fmt.Errorf("failed to open source file: %w", err)
