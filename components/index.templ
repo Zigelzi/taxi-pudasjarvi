@@ -13,14 +13,8 @@ templ Index() {
 		</div>
 		<section class="bg-stone-900 text-white section">
 			<h2 class="text-2xl mb-2 text-taxi">Tilaa taksi</h2>
-			<div class="mb-4">
-				<h3 class="">Pudasjärven keskusta</h3>
-				<a href="tel:0400289760" target="_blank" rel="noopener noreferrer">0400 289 760</a>
-			</div>
-			<div>
-				<h3 class="">Jaurakkajärvi, Puhos, Ervasti</h3>
-				<a href="tel:0400386188" target="_blank" rel="noopener noreferrer">0400 386 188</a>
-			</div>
+			@ContactCard("Pudasjärven keskusta", "0400289760")
+			@ContactCard("Jaurakkajärvi, Puhos, Ervasti", "0400386188")
 		</section>
 	}
 }

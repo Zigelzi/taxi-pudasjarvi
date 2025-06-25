@@ -1,0 +1,13 @@
+package components
+
+templ ContactCard(locationName string, phoneNumber string) {
+	<div class="mb-4 border-2 border-white px-2 py-4 max-w-sm">
+		<p class="text-taxi">{ locationName }</p>
+		<a class="text-2xl" href={ templ.SafeURL("tel:" + phoneNumber) } target="_blank" rel="noopener noreferrer">{ formatPhoneNumber(phoneNumber) }</a>
+	</div>
+}
+
+func formatPhoneNumber(phoneNumber string) string {
+	formattedNumber := phoneNumber[0:4] + " " + phoneNumber[4:7] + " " + phoneNumber[7:]
+	return formattedNumber
+}
