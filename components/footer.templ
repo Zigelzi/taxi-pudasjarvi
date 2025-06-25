@@ -1,7 +1,18 @@
 package components
 
 templ Footer() {
-	<div class="flex items-center justify-center px-4 py-6">
-		<p class="text-xl">Pudasjärven Taksimatkat Oy</p>
+	<div class="flex items-center justify-center px-4 py-6 flex-col gap-2 md:flex-row md:gap-8 md:items-start">
+		<div class="min-w-3xs">
+			<p class="font-bold">Pudasjärven Taksimatkat Oy</p>
+			<p>Suomen Taksiliiton jäsen</p>
+		</div>
+		<div class="min-w-3xs">
+			<span class="relative">
+				<span class="absolute bg-taxi inset-x-0 bottom-0 h-1" aria-hidden="true"></span>
+				<a class="relative" href="mailto:savela@taxipudasjarvi.fi">savela@taxipudasjarvi.fi</a>
+			</span>
+			<p>Ritolantie 14</p>
+			<p>93100 PUDASJÄRVI</p>
+		</div>
 	</div>
 }
