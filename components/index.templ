@@ -7,14 +7,19 @@ templ Index() {
 				<img class="w-full h-full object-center object-cover" src="./assets/taxi-pudasjarvi-hero.jpg" alt="" srcset=""/>
 			</div>
 			<div class="flex-1 flex items-center justify-center flex-col px-4 text-center">
-				<h2 class="text-2xl mb-4">Laadukasta taksipalvelua Pudasjärven alueella</h2>
-				<p>Viemme sinut perille siistillä ja laadukkaalla autolla ja ystävällisessä seurassa. Yli 40 vuoden kokemuksella.</p>
+				<h2 class="text-2xl mb-4 lg:text-4xl">Laadukasta taksipalvelua Pudasjärven alueella</h2>
+				<p class="lg:text-2xl lg:font-light">Viemme sinut perille siistillä ja laadukkaalla autolla ja ystävällisessä seurassa. Yli 40 vuoden kokemuksella.</p>
 			</div>
 		</div>
 		<section class="bg-stone-900 text-white section">
-			<h2 class="text-2xl mb-2 text-taxi">Tilaa taksi</h2>
-			@ContactCard("Pudasjärven keskusta", "0400289760")
-			@ContactCard("Jaurakkajärvi, Puhos, Ervasti", "0400386188")
+			<div class="text-center mb-6">
+				<h2 class="text-2xl  text-taxi mb-2 md:text-3xl">Tilaa taksi</h2>
+				<p>Soita meille, niin sovitaan sinulle kyyti kohteeseen.</p>
+			</div>
+			<div class="flex gap-4 flex-wrap justify-center">
+				@ContactCard("Pudasjärven keskusta", "0400289760")
+				@ContactCard("Jaurakkajärvi, Puhos, Ervasti", "0400386188")
+			</div>
 		</section>
 	}
 }
